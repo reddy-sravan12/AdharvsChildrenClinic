@@ -1,0 +1,18 @@
+.main {
+  /* box-shadow: 0.1px 0.1px 5px #000000; */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  bottom: 10px;
+}
+.website_text {
+  font-weight: 600;
+  font-family: "archivo";
+}
+.website_logo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}

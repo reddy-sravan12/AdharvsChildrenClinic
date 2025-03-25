@@ -15,6 +15,7 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
+      // "@react-google-maps/api/*": ["./node_modules/@react-google-maps/api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

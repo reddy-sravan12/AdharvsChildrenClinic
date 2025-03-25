@@ -1,0 +1,19 @@
+.mainHead {
+  text-decoration: underline;
+  font-weight: 700;
+  font-family: "roboto";
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.mainpara {
+  margin-bottom: 20px;
+  font-family: "archivo";
+  font-size: 15px;
+}
+
+.sub {
+  margin-bottom: 20px;
+  font-family: "archivo";
+  font-size: 10px;
+}

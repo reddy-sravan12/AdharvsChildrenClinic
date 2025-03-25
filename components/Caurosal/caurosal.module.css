@@ -1,0 +1,27 @@
+/* Carousel container */
+.carousel {
+  position: relative;
+  width: 300px; /* Adjust width */
+  height: 200px; /* Adjust height */
+  overflow: hidden; /* Hide items outside the container */
+  margin: 0 auto;
+}
+
+/* The inner container that holds all carousel items */
+.carousel_inner {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 100%); /* Adjust the number of items */
+  transition: transform 1s ease-in-out; /* Smooth transition */
+}
+
+/* Each carousel item */
+.carousel_item {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-size: 24px;
+  font-weight: bold;
+}

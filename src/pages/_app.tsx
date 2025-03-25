@@ -1,6 +1,12 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { Archivo } from "next/font/google";
+
+const roboto = Archivo({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -33,6 +39,16 @@ export default function App({ Component, pageProps }: AppProps) {
           name="keywords"
           content="pediatric care, children's health, kids' doctor, pediatric clinic, newborn care, vaccinations for children, children's wellness check-up, pediatric specialist, family-friendly pediatric care, child development support"
         />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+        />
+        <link
+          href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+          rel="stylesheet"
+        />
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         {/* <!-- Canonical Tag (if applicable) --> */}
         {/* <link rel="canonical" href="https://www.example.com/pediatric-care" /> */}
@@ -73,6 +89,11 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* <!-- Viewport Meta Tag (for mobile responsiveness) --> */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <style jsx global>{`
+        html {
+          font-family: ${roboto.style.fontFamily};
+        }
+      `}</style>
       <Component {...pageProps} />
     </>
   );
