@@ -1,21 +1,37 @@
-// import { getServerSideProps } from "next/dist/build/templates/pages";
-import classes from "../../components/Terms/terms.module.css";
+import useTimer from "../../hooks/timerHook";
 
-const Terms = (param: any) => {
-  // const data = getTheApiDetails().then((res) => res);
-  console.log(param);
-  return <div>Hello</div>;
+const Home = () => {
+  const { time, stopTimer, startTimer, reset } = useTimer();
+
+  function formatTime() {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    if (minutes === 59 && seconds === 60) {
+      reset();
+    }
+    return `${minutes <= 9 ? `0${minutes}` : minutes}:${
+      seconds <= 9 ? `0${seconds}` : seconds
+    }`;
+  }
+
+  return (
+    <div>
+      {formatTime()}
+      <button
+        onClick={stopTimer}
+        style={{ border: "1px solid red", marginRight: "10px" }}>
+        stop
+      </button>
+      <button
+        onClick={startTimer}
+        style={{ border: "1px solid green", marginRight: "10px" }}>
+        start
+      </button>
+      <button onClick={reset} style={{ border: "1px solid blue" }}>
+        reset
+      </button>
+    </div>
+  );
 };
 
-export function getServerSideProps() {
-  const getTheApiDetails = async () => {
-    await fetch("https://catfact.ninja/fact")
-      .then((response) => response.json())
-      .then((res) => res);
-  };
-  return {
-    params: { content: JSON.stringify(getTheApiDetails) },
-  };
-}
-
-export default Terms;
+export default Home;
